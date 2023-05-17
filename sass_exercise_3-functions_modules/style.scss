@@ -1,46 +1,46 @@
-@import 'function';
+@use 'variables' as v;
 
 @mixin article($color: red, $border-color: blue, $font-size: 1rem) {
-    color: $color;
-    border-color: $border-color;
-    font-size: $font-size;
-  }
+  color: $color;
+  border-color: $border-color;
+  font-size: $font-size;
+}
 
 div {
-    @include article();
-    border: 1px solid;
-  
-    h1 {
-      @include article(green, $font-size: 24px);
-      text-align: center;
-      text-decoration: underline blue 0.5px;
+  @include article();
+  border: v.rem(1) solid;
+
+  h1 {
+    @include article(green, $font-size: v.rem(24));
+    text-align: center;
+    text-decoration: underline blue v.rem(1);
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: v.rem(10);
+    article {
+      @include article(green);
+      border: v.rem(1) solid;
+      padding: v.rem(15);
     }
-    section {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      margin: 10px;
-      article {
+    article:nth-child(odd) {
+      @include article(blue, green);
+    }
+    article:nth-child(even) {
+      @include article(red, green);
+    }
+  }
+
+  section:last-of-type {
+    article {
+      @include article($border-color: blue);
+      flex-grow: v.rem(1);
+      p {
         @include article(green);
-        border: 1px solid;
-        padding: 15px;
-      }
-      article:nth-child(odd) {
-        @include article(blue, green);
-      }
-      article:nth-child(even) {
-        @include article(red, green);
-      }
-    }
-  
-    section:last-of-type {
-      article {
-        @include article($border-color: blue);
-        flex-grow: 1;
-        p {
-          @include article(green);
-          @import 'function';
-        }
+        font-size: v.rem(24);
       }
     }
   }
+}

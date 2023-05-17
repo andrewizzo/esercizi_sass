@@ -1,58 +1,60 @@
-div {
-  color: red;
-  border-color: blue;
-  font-size: 1rem;
-  border: 1px solid;
-}
-div h1, div h2 {
-  color: green;
-  border-color: blue;
-  font-size: 24px;
+div h2, div h1 {
   text-align: center;
-  text-decoration: underline blue 0.5px;
-  padding: 1em;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
+div {
+  color: green;
+  border: 1px solid red;
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 div h2 {
-  text-decoration: none;
+  width: 20%;
+}
+div h2.prova {
   border: 1px solid red;
-  padding: 1rem;
-  width: 17vw;
-  margin-left: 620px;
+  text-decoration: none;
 }
-div section {
+
+section {
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+}
+section p {
   text-align: center;
-  margin: 10px;
+  padding: 10px;
 }
-div section article {
-  color: green;
-  border-color: blue;
-  font-size: 1rem;
-  border: 1px solid;
-  padding: 15px;
-}
-div section article:nth-child(odd) {
+section article {
+  display: flex;
   color: blue;
-  border-color: green;
+  border: 1px solid green;
   font-size: 1rem;
 }
-div section article:nth-child(even) {
+section article:nth-child(odd) {
   color: red;
-  border-color: green;
-  font-size: 1rem;
 }
-div section:last-of-type article {
-  color: red;
-  border-color: blue;
-  font-size: 1rem;
-  flex-grow: 1;
+
+section:last-of-type {
+  display: flex;
+  width: 95%;
 }
-div section:last-of-type article p {
+section:last-of-type p {
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+section:last-of-type article {
   color: green;
-  border-color: blue;
-  font-size: 1rem;
+  border: 1px solid blue;
   font-size: 24px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

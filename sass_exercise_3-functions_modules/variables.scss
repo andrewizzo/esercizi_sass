@@ -1,0 +1,7 @@
+$color-primary:red;
+$color-tertiary: green;
+$color-third:blue;
+
+@function rem($px){
+    @return calc($px / 16px) * 1rem;
+}
